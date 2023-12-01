@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Maqolalar Ro'yxati</title>
+</head>
+<body>
+    <h1>Maqolalar Ro'yxati</h1>
+    <ul>
+        {% for maqola in maqolalar %}
+            <li><a href="{% url 'maqola_tafsiloti' maqola.id %}">{{ maqola.sarlavha }}</a> - {{ maqola.muallif }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
+
+
+from django.contrib import admin
+from .models import Maqola
+
+admin.site.register(Maqola)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanlangan Maqola Tafsiloti</title>
+</head>
+<body>
+    <h1>{{ maqola.sarlavha }}</h1>
+    <p>Muallif: {{ maqola.muallif }}</p>
+    <p>Tartib: {{ maqola.tartib }}</p>
+    <p>{{ maqola.matn }}</p>
+</body>
+</html>
